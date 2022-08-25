@@ -52,6 +52,10 @@ Voron V2.4071 software configuration and hardware configuration (via this docume
     - So that can be used by handles placed vertically on left and right of the printer
         - Must be printed at 100% infill so that handlebars can be hulked into place
 
+# Software
+- SuperSlicer
+    - [Textured Build Surface](https://github.com/VoronDesign/VoronUsers/blob/master/slicer_configurations/PrusaSlicer/hartk1213/V0/Bed_Shape/Texture/voron_textured.png)
+    - [Bed Model](https://github.com/VoronDesign/VoronUsers/blob/master/slicer_configurations/SuperSlicer/hoangnam123/voron2_bed-300.stl)
 
 # Plans
 - Convert removable doors from VHB to drilled holes
