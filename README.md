@@ -33,6 +33,9 @@ Voron V2.4071 software configuration and hardware configuration (via this docume
 - [Corner Cable Hide / Cover (LED Wires)](https://github.com/VoronDesign/VoronUsers/tree/master/printer_mods/samwiseg0/corner_cable_hide)
   - Right version used (see below for remix on left side)
 - [Exhaust Cover](https://github.com/VoronDesign/VoronUsers/tree/master/printer_mods/Fiction/Exhaust_cover)
+- [CW1 Stealthburner PCB Cover](https://github.com/hartk1213/MISC/blob/main/Voron%20Mods/Extruders/CW1/STLs/sb_pcb_cover.stl)
+- [Nevermore V5 Micro](https://github.com/nevermore3d/Nevermore_Micro)
+    - Using [Ellis's Bed Fan Macros](https://github.com/VoronDesign/VoronUsers/tree/master/printer_mods/Ellis/Bed_Fans)
 
 # Remixes
 - [LRS200 Door Cover](https://github.com/VoronDesign/VoronUsers/tree/master/printer_mods/samwiseg0/lrs_screw_terminal_cover)
@@ -52,5 +55,4 @@ Voron V2.4071 software configuration and hardware configuration (via this docume
 
 # Plans
 - Convert removable doors from VHB to drilled holes
-- Nevermore V5 Micro
 - Mod [Exhaust Cover](https://github.com/VoronDesign/VoronUsers/tree/master/printer_mods/Fiction/Exhaust_cover) to elimenate gap between it and extrusions
