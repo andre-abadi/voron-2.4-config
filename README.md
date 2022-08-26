@@ -22,7 +22,8 @@ Voron V2.4071 software configuration and hardware configuration (via this docume
 - [KlickyNG](https://github.com/jlas1/Klicky-Probe)
 - [Stealthburner RC1](https://github.com/VoronDesign/Voron-Stealthburner)
 - [Removable Doors](https://github.com/VoronDesign/VoronUsers/tree/master/printer_mods/ElPoPo/RemovableDoors)
-    - VHB Attachment
+    - First iteration used VHB tape
+    - Have since replaced VHB option with screw option
 - [Panel Latches](https://github.com/VoronDesign/VoronUsers/tree/master/printer_mods/richardjm/snap-latch-2020)
     - 4mm for Top and Back Panels
     - 7mmm for Sides
@@ -54,9 +55,7 @@ Voron V2.4071 software configuration and hardware configuration (via this docume
 
 # Software
 - SuperSlicer
-    - [Textured Build Surface](https://github.com/VoronDesign/VoronUsers/blob/master/slicer_configurations/PrusaSlicer/hartk1213/V0/Bed_Shape/Texture/voron_textured.png)
-    - [Bed Model](https://github.com/VoronDesign/VoronUsers/blob/master/slicer_configurations/SuperSlicer/hoangnam123/voron2_bed-300.stl)
+    - [Build Plate & Texture](https://github.com/hartk1213/MISC/tree/main/Voron%20Mods/SuperSlicer/Bed_Models/V2)
 
 # Plans
-- Convert removable doors from VHB to drilled holes
 - Mod [Exhaust Cover](https://github.com/VoronDesign/VoronUsers/tree/master/printer_mods/Fiction/Exhaust_cover) to elimenate gap between it and extrusions
