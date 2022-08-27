@@ -29,6 +29,7 @@ Voron V2.4071 software configuration and hardware configuration (via this docume
     - 7mmm for Sides
 - [Horizontal Spool Holder](https://github.com/VoronDesign/VoronUsers/tree/master/printer_mods/BladeScraper-Designs/Horizontal-Spool-Holder)
 - [Nozzle Scrubber with a Little Bucket for Voron 2.4](https://www.printables.com/model/201999-nozzle-scrubber-with-a-little-bucket-for-voron-24)
+    - Note this does have an issue with the STL where there is a gap in the design, it prints OK but with artifacts, author yet to rectify
 - [Deck Panel Support Clips](https://github.com/VoronDesign/VoronUsers/tree/master/printer_mods/wile-e1/Deck_Panel_Support_Clips)
     - Lower 4mm
 - [Corner Cable Hide / Cover (LED Wires)](https://github.com/VoronDesign/VoronUsers/tree/master/printer_mods/samwiseg0/corner_cable_hide)
@@ -52,6 +53,9 @@ Voron V2.4071 software configuration and hardware configuration (via this docume
     - Made body protrude by 7mm so that 3mm acrylic and 3mm foam panel can fit underneath
     - So that can be used by handles placed vertically on left and right of the printer
         - Must be printed at 100% infill so that handlebars can be hulked into place
+- [Removable Doors](https://github.com/VoronDesign/VoronUsers/tree/master/printer_mods/ElPoPo/RemovableDoors)
+    - Remixed hinges to have indexing holes so easier to put doors back on
+
 
 # Software
 - SuperSlicer
