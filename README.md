@@ -38,6 +38,10 @@ Voron V2.4071 software configuration and hardware configuration (via this docume
 - [CW1 Stealthburner PCB Cover](https://github.com/hartk1213/MISC/blob/main/Voron%20Mods/Extruders/CW1/STLs/sb_pcb_cover.stl)
 - [Nevermore V5 Micro](https://github.com/nevermore3d/Nevermore_Micro)
     - Using [Ellis's Bed Fan Macros](https://github.com/VoronDesign/VoronUsers/tree/master/printer_mods/Ellis/Bed_Fans)
+- Killstruder *TODO*
+- Smart Filament Sensor and Mount
+- Titanium Gantry Backers
+
 
 # Remixes
 - [LRS200 Door Cover](https://github.com/VoronDesign/VoronUsers/tree/master/printer_mods/samwiseg0/lrs_screw_terminal_cover)
@@ -60,6 +64,17 @@ Voron V2.4071 software configuration and hardware configuration (via this docume
 # Software
 - SuperSlicer
     - [Build Plate & Texture](https://github.com/hartk1213/MISC/tree/main/Voron%20Mods/SuperSlicer/Bed_Models/V2)
+- Extra Subroutines
+    - Heatsoak
+    - Autocommit
+    - Nozzle Scrub
+    - LCD Macros
+    - Temperature Fan
+    - Stealthburner LEDs including custom for cooldown
 
 # Plans
-- Mod [Exhaust Cover](https://github.com/VoronDesign/VoronUsers/tree/master/printer_mods/Fiction/Exhaust_cover) to elimenate gap between it and extrusions
+- [Angry Cam](https://github.com/VoronDesign/VoronUsers/tree/master/printer_mods/chri.kai.in/Angry_CAM_USB)
+- [MicroSD skirt headers for MCU and Rpi](https://www.thingiverse.com/thing:5036693)
+- [ADXL skirt header](https://www.thingiverse.com/thing:5026196)
+- Auto Z calibration
+- Frame expansion sensor (once Klipper upgraded)
