@@ -14,6 +14,8 @@ Voron V2.4071 software configuration and hardware configuration (via this docume
 
 # Mods
 
+## Hardware
+
 - [LDO](https://docs.ldomotors.com/en/voron/voron2/printed_part_guide_rev_a)
     - [LDO Door Latches](https://github.com/MotorDynamicsLab/LDOVoron2/tree/main/STLs/LDO%20Door)
     - [LED Clips](https://github.com/VoronDesign/VoronUsers/blob/master/printer_mods/eddie/LED_Bar_Clip/LED_Bar_Clip_Misumi_version2.stl)
@@ -38,12 +40,12 @@ Voron V2.4071 software configuration and hardware configuration (via this docume
 - [CW1 Stealthburner PCB Cover](https://github.com/hartk1213/MISC/blob/main/Voron%20Mods/Extruders/CW1/STLs/sb_pcb_cover.stl)
 - [Nevermore V5 Micro](https://github.com/nevermore3d/Nevermore_Micro)
     - Using [Ellis's Bed Fan Macros](https://github.com/VoronDesign/VoronUsers/tree/master/printer_mods/Ellis/Bed_Fans)
-- Killstruder *TODO*
-- Smart Filament Sensor and Mount
-- Titanium Gantry Backers
+- Killstractor **TODO**
+- Smart Filament Sensor and Mount **TODO**
+- Titanium Gantry Backers **TODO**
+- Skirt SD header **TODO**
 
-
-# Remixes
+### Remixed Hardware Mods
 - [LRS200 Door Cover](https://github.com/VoronDesign/VoronUsers/tree/master/printer_mods/samwiseg0/lrs_screw_terminal_cover)
     - Made outer edges thinner to fit in my LRS200
 - [Corner Cable Hide / Cover (LED Wires)](https://github.com/VoronDesign/VoronUsers/tree/master/printer_mods/samwiseg0/corner_cable_hide)
@@ -60,21 +62,21 @@ Voron V2.4071 software configuration and hardware configuration (via this docume
 - [Removable Doors](https://github.com/VoronDesign/VoronUsers/tree/master/printer_mods/ElPoPo/RemovableDoors)
     - Remixed hinges to have indexing holes so easier to put doors back on
 
-
-# Software
+## Software
 - SuperSlicer
     - [Build Plate & Texture](https://github.com/hartk1213/MISC/tree/main/Voron%20Mods/SuperSlicer/Bed_Models/V2)
 - Extra Subroutines
-    - Heatsoak
-    - Autocommit
-    - Nozzle Scrub
-    - LCD Macros
-    - Temperature Fan
-    - Stealthburner LEDs including custom for cooldown
+    - [Heatsoak](https://github.com/MakerBogans/KlipperConfig/blob/master/Verethy/VT-627/macros.cfg) `heatsoak.cfg`
+    - [Autocommit](https://github.com/th33xitus/kiauh/wiki/How-to-autocommit-config-changes-to-github%3F) `autocommit.cfg` + `autocommit.sh`
+    - [Nozzle Scrub](https://www.youtube.com/watch?v=ZEXYnXZA8B0&t=3s) `clean_nozzle.cfg`
+    - LCD Macro overrides and extra chamber temp on LCD `lcd-macros.cfg`
+    - Temperature Fan `temperature_fan.cfg`
+    - Stealthburner LEDs including custom for cooldown `stealthburner_leds.cfg`
+    - Auto Z Calibration `z_calibration.cfg` **
 
 # Plans
 - [Angry Cam](https://github.com/VoronDesign/VoronUsers/tree/master/printer_mods/chri.kai.in/Angry_CAM_USB)
 - [MicroSD skirt headers for MCU and Rpi](https://www.thingiverse.com/thing:5036693)
 - [ADXL skirt header](https://www.thingiverse.com/thing:5026196)
-- Auto Z calibration
-- Frame expansion sensor (once Klipper upgraded)
+- [Auto Z calibration](https://github.com/protoloft/klipper_z_calibration)
+- [Frame expansion sensor (once Klipper upgraded)](https://www.klipper3d.org/Config_Reference.html#z_thermal_adjust)
