@@ -2,6 +2,10 @@
 
 Voron V2.4071 software configuration and hardware configuration (via this document).
 
+# Serial
+- [Serial Request Link](https://www.reddit.com/r/voroncorexy/comments/woqokq/serial_request_for_ldo_voron_v24r2_300_by/)
+- Serial obtained on Wednesday 17 August 2022 at 1:15pm UTC+8
+
 # Build
 
 - [Voron 2.4](https://vorondesign.com/voron2.4)
