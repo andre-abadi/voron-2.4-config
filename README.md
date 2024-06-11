@@ -12,23 +12,33 @@ Voron V2.4071 software configuration and hardware configuration (via this docume
 - [LDO 2.4r2 Kit 300mm Red](https://docs.ldomotors.com/en/voron/voron2)
 - [PIF](https://pif.voron.dev/)
     - eSun ABS+ Black
-    - AmazonBasics ABS Red
 - [Phaetus Dragon HF Hotend](https://www.phaetus.com/dragon-hotend-hf/)
-- Additional parts in eSun ABS+ Black
+- Additional parts in eSun ABS+ Black and generic ABS Black
 
 # Config
-- [Octopus Pro](https://docs.vorondesign.com/build/software/octopus_klipper.html)
+
+## [Octopus Pro](https://docs.vorondesign.com/build/software/octopus_klipper.html)
   - `STMicroelectronics STM32`
   - `STM32F446`
   - `32KiB bootloader`
   - `12 MHz crystal` (for STM32F446)
 
+## [Nitehawk USB Toolhead PCB](https://docs.ldomotors.com/voron/nitehawk-sb)
+
+|Menuconfig|Setting|
+|---|---|
+|Enable extra low-level configuration options|`*`|
+|Micro-controller Architecture|`Raspberry Pi RP2040`|
+|Bootloader offse|`16KiB bootloader`|
+|Communication interface|`USB`|
+|USB ids|`--->`|
+|GPIO pins set at micro-controller startup|`!gpio8`|
+
 # Software
-- SuperSlicer
+- PrusaSlicer
     - [Build Plate & Texture](https://github.com/hartk1213/MISC/tree/main/Voron%20Mods/SuperSlicer/Bed_Models/V2)
 - Extra Subroutines
     - [Heatsoak](https://github.com/MakerBogans/KlipperConfig/blob/master/Verethy/VT-627/macros.cfg) `heatsoak.cfg`
-    - [Autocommit](https://github.com/th33xitus/kiauh/wiki/How-to-autocommit-config-changes-to-github%3F) `autocommit.cfg` + `autocommit.sh`
     - [Nozzle Scrub](https://www.youtube.com/watch?v=ZEXYnXZA8B0&t=3s) `clean_nozzle.cfg`
     - LCD Macro overrides and extra chamber temp on LCD `lcd-macros.cfg`
     - Temperature Fan `temperature_fan.cfg`
@@ -69,6 +79,10 @@ Voron V2.4071 software configuration and hardware configuration (via this docume
 - [BTT Smart Filament Sensor and Mount](https://www.printables.com/model/220585-voron-v2-btt-smart-filament-sensor-mount)
 - [Titanium Gantry Backers](https://github.com/tanaes/whopping_Voron_mods/tree/main/extrusion_backers)
 - [Bed_Fans](https://github.com/VoronDesign/VoronUsers/tree/master/printer_mods/Ellis/Bed_Fans)
+- CW2/TAP Upgrade
+    - [CW2 from SB](https://github.com/VoronDesign/Voron-Stealthburner)
+    - [TAP](https://github.com/VoronDesign/Voron-Tap)
+- [Nitehawk USB Toolhead PCB](https://docs.ldomotors.com/voron/nitehawk-sb)
 
 ## Remixed Hardware Mods
 - [LRS200 Door Cover](https://github.com/VoronDesign/VoronUsers/tree/master/printer_mods/samwiseg0/lrs_screw_terminal_cover)
@@ -87,11 +101,23 @@ Voron V2.4071 software configuration and hardware configuration (via this docume
 - [Removable Doors](https://github.com/VoronDesign/VoronUsers/tree/master/printer_mods/ElPoPo/RemovableDoors)
     - Remixed hinges to have indexing holes so easier to put doors back on
 
-# Plans
+# Unused
+Things no longer used on this printer.
+
+## Build
+- [PIF](https://pif.voron.dev/)
+    - AmazonBasics ABS Red
+
+## Software
+- SuperSlicer
+    - [Build Plate & Texture](https://github.com/hartk1213/MISC/tree/main/Voron%20Mods/SuperSlicer/Bed_Models/V2)
+- Extra Subroutines
+    - [Autocommit](https://github.com/th33xitus/kiauh/wiki/How-to-autocommit-config-changes-to-github%3F) `autocommit.cfg` + `autocommit.sh`
+    - Auto Z Calibration `z_calibration.cfg` **
+
+## Plans
 - [ADXL skirt header](https://www.thingiverse.com/thing:5026196)
 - [Auto Z calibration](https://github.com/protoloft/klipper_z_calibration)
 - [Frame Expansion Sensor](https://www.klipper3d.org/Config_Reference.html#z_thermal_adjust)
-- CW2/TAP Upgrade
-    - [CW2 from SB](https://github.com/VoronDesign/Voron-Stealthburner)
-    - [TAP](https://github.com/VoronDesign/Voron-Tap)
-    - [LDO Toolhead PCB and Cover](https://www.ldomotion.com/p/guide/18295873486193741)
+
+
