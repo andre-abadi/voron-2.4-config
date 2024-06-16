@@ -20,10 +20,23 @@ Voron V2.4071 software configuration and hardware configuration (via this docume
 # Config
 
 ## [Octopus Pro](https://docs.vorondesign.com/build/software/octopus_klipper.html)
-  - `STMicroelectronics STM32`
-  - `STM32F446`
-  - `32KiB bootloader`
-  - `12 MHz crystal` (for STM32F446)
+
+|Menuconfig|Setting|
+|---|---|
+|Enable extra low-level configuration options|`*`|
+|Micro-controller Architecture|`STMicroelectronics STM32`|
+|Processor model|`STM32F446`|
+|Bootloader offse|`32KiB bootloader`|
+|Clock Reference|`12 MHz crystal`|
+|Communication interface|`USB (on PA11/PA12)`|
+|USB ids|`--->`|
+|Specify a custom step pulse duration|`[ ]`|
+|GPIO pins set at micro-controller startup|`()`|
+
+- `STMicroelectronics STM32`
+- `STM32F446`
+- `32KiB bootloader`
+- `12 MHz crystal` (for STM32F446)
 
 ## [Nitehawk USB Toolhead PCB](https://docs.ldomotors.com/voron/nitehawk-sb)
 
