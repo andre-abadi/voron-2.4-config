@@ -33,10 +33,25 @@ Voron V2.4071 software configuration and hardware configuration (via this docume
 |Specify a custom step pulse duration|`[ ]`|
 |GPIO pins set at micro-controller startup|`()`|
 
-- `STMicroelectronics STM32`
-- `STM32F446`
-- `32KiB bootloader`
-- `12 MHz crystal` (for STM32F446)
+### Verified Update Steps
+
+- `cd ~/klipper`
+- `make clean`
+- `make menuconfig`
+    - Double check it matches the above table.
+- `q` (quit)
+- `y` (save)
+- `make`
+- `cp -f out/klipper.bin ~/klipper_config/firmware.bin`
+    - Overwrites any previous `firmware.bin`
+    - `klipper.bin` won't be recognised by the board, it has to be `firmware.bin` which is why this copy command also renames it.
+- Download `firmware.bin` via MainsailOS/Machine.
+- Check MicroSD card is `FAT32`.
+- Copy `firmware.bin` to root of MicroSD card.
+- Power off printer (to power off board completely).
+- Insert MicroSD card into board or header ribbon.
+- `ls /dev/serial/by-id`
+    - Should show the board connected with Klipper.
 
 ## [Nitehawk USB Toolhead PCB](https://docs.ldomotors.com/voron/nitehawk-sb)
 
@@ -49,23 +64,30 @@ Voron V2.4071 software configuration and hardware configuration (via this docume
 |USB ids|`--->`|
 |GPIO pins set at micro-controller startup|`!gpio8`|
 
-1. `ls /dev/serial/by-id`
-2. `cd ~/klipper`
-3. `make menuconfig`
-4. `make clean`
-5. `make`
-6. `sudo apt install python3 python3-pip`
-7. `pip3 install pyserial`
-8. `cd ~/klipper`
-9. `sudo service klipper stop`
-10. `make flash FLASH_DEVICE=/dev/serial/by-id/usb-Klipper_rp2040_3033393834049F97-if00`
+### Verified Update Steps
+
+- `ls /dev/serial/by-id`
+- `cd ~/klipper`
+- `make clean`
+- `make menuconfig`
+    - Double check it matches the above table.
+- `q` (quit)
+- `y` (save)
+- `make`
+- `sudo apt install python3 python3-pip`
+    - Idempotent; won't hurt if already installed.
+- `pip3 install pyserial`
+    - LDO docs say `pip` but `pip3` worked and `pip` did not.
+- `cd ~/klipper`
+- `sudo service klipper stop`
+- `make flash FLASH_DEVICE=/dev/serial/by-id/usb-Klipper_rp2040_3033393834049F97-if00`
     - This will throw an error but results in the board restarting into the bootloader mode (Katapult) in the below `by-id`.
-11. `make flash FLASH_DEVICE=/dev/serial/by-id/usb-katapult_rp2040_3033393834049F97-if00`
+- `make flash FLASH_DEVICE=/dev/serial/by-id/usb-katapult_rp2040_3033393834049F97-if00`
     - This should work and result in the board restarting into Klipper mode.
-12. `ls /dev/serial/by-id`
+- `ls /dev/serial/by-id`
     - This should show the board back into Klipper mode.
-13. `sudo service klipper start`
-    - In Nitehawk should now be at same version as host.
+- `sudo service klipper start`
+    - In Nitehawk should now be at same version as host as seen on MainsailOS.
 
 # Software
 - PrusaSlicer
