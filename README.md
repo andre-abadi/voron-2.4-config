@@ -52,6 +52,7 @@ Voron V2.4071 software configuration and hardware configuration (via this docume
 - Insert MicroSD card into board or header ribbon.
 - `ls /dev/serial/by-id`
     - Should show the board connected with Klipper.
+- Successful flash is also indicated by MicroSD card containing single file `FIRMWARE.CUR`
 
 ## [Nitehawk USB Toolhead PCB](https://docs.ldomotors.com/voron/nitehawk-sb)
 
