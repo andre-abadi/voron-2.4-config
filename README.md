@@ -49,6 +49,23 @@ Voron V2.4071 software configuration and hardware configuration (via this docume
 |USB ids|`--->`|
 |GPIO pins set at micro-controller startup|`!gpio8`|
 
+1. `ls /dev/serial/by-id`
+2. `cd ~/klipper`
+3. `make menuconfig`
+4. `make clean`
+5. `make`
+6. `sudo apt install python3 python3-pip`
+7. `pip3 install pyserial`
+8. `cd ~/klipper`
+9. `sudo service klipper stop`
+10. `make flash FLASH_DEVICE=/dev/serial/by-id/usb-Klipper_rp2040_3033393834049F97-if00`
+  - This will throw an error but results in the board restarting into the bootloader mode (Katapult).
+11. `make flash FLASH_DEVICE=/dev/serial/by-id/usb-katapult_rp2040_3033393834049F97-if00`
+  - This should work and result in the board restarting into Klipper mode.
+12. `ls /dev/serial/by-id`
+  - This should show the board back into Klipper mode.
+13. `sudo service klipper start`
+
 # Software
 - PrusaSlicer
     - [Build Plate & Texture](https://github.com/hartk1213/MISC/tree/main/Voron%20Mods/SuperSlicer/Bed_Models/V2)
