@@ -90,6 +90,25 @@ Voron V2.4071 software configuration and hardware configuration (via this docume
 - `sudo service klipper start`
     - In Nitehawk should now be at same version as host as seen on MainsailOS.
 
+## [Input Shaper Auto Calibration](https://www.klipper3d.org/Measuring_Resonances.html#input-shaper-auto-calibration)
+
+- `STARTUP_SELF_TEST`
+    - Just to turn on the lights and get the printer ready.
+- `ACCELEROMETER_QUERY`
+    - Should give readings on three axes to show that the accelerometer is ready.
+- `SHAPER_CALIBRATE`
+    - Does everything automatically.
+    - Take note the max acceleration recommended for below.
+- To calculate [`max_accel`](https://www.klipper3d.org/Measuring_Resonances.html#selecting-max_accel)c for each of `shaper_type_x` and `shaper_type_y` in the results of `SHAPER_CALIBRATE`:
+    - Look up that shaper name.
+    - Verify a match of frequencies between instances of that shaper name for that axis.
+    - Take note of suggested `max_accel`
+- `SAVE_CONFIG`
+- In `printer.cfg` update `[max_accel]`
+    - Lowest of the two.
+    - Safety margin, recommend rounding down to nearest `500mm/sec^2`
+
+
 # Software
 - PrusaSlicer
     - [Build Plate & Texture](https://github.com/hartk1213/MISC/tree/main/Voron%20Mods/SuperSlicer/Bed_Models/V2)
@@ -156,6 +175,11 @@ Voron V2.4071 software configuration and hardware configuration (via this docume
         - Must be printed at 100% infill so that handlebars can be hulked into place
 - [Removable Doors](https://github.com/VoronDesign/VoronUsers/tree/master/printer_mods/ElPoPo/RemovableDoors)
     - Remixed hinges to have indexing holes so easier to put doors back on
+
+# Resonance Testing
+- [Klipper Documentation](https://www.klipper3d.org/Measuring_Resonances.html#measuring-the-resonances)
+- Built into the Nitehawk toolhead PCB
+
 
 # Unused
 Things no longer used on this printer.
