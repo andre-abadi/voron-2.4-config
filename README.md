@@ -59,12 +59,13 @@ Voron V2.4071 software configuration and hardware configuration (via this docume
 8. `cd ~/klipper`
 9. `sudo service klipper stop`
 10. `make flash FLASH_DEVICE=/dev/serial/by-id/usb-Klipper_rp2040_3033393834049F97-if00`
-  - This will throw an error but results in the board restarting into the bootloader mode (Katapult).
+    - This will throw an error but results in the board restarting into the bootloader mode (Katapult) in the below `by-id`.
 11. `make flash FLASH_DEVICE=/dev/serial/by-id/usb-katapult_rp2040_3033393834049F97-if00`
-  - This should work and result in the board restarting into Klipper mode.
+    - This should work and result in the board restarting into Klipper mode.
 12. `ls /dev/serial/by-id`
-  - This should show the board back into Klipper mode.
+    - This should show the board back into Klipper mode.
 13. `sudo service klipper start`
+    - In Nitehawk should now be at same version as host.
 
 # Software
 - PrusaSlicer
