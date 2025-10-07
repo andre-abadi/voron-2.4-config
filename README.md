@@ -19,7 +19,7 @@ Voron V2.4071 software configuration and hardware configuration (via this docume
 
 # Config
 
-## [Octopus Pro](https://docs.vorondesign.com/build/software/octopus_klipper.html)
+## [Octopus Pro v1.0.1 STM32F446](https://docs.vorondesign.com/build/software/octopus_klipper.html)
 
 |Menuconfig|Setting|
 |---|---|
