@@ -21,17 +21,20 @@ Voron V2.4071 software configuration and hardware configuration (via this docume
 
 ## [Octopus Pro v1.0.1 STM32F446](https://docs.vorondesign.com/build/software/octopus_klipper.html)
 
-|Menuconfig|Setting|
-|---|---|
-|Enable extra low-level configuration options|`*`|
-|Micro-controller Architecture|`STMicroelectronics STM32`|
-|Processor model|`STM32F446`|
-|Bootloader offse|`32KiB bootloader`|
-|Clock Reference|`12 MHz crystal`|
-|Communication interface|`USB (on PA11/PA12)`|
-|USB ids|`--->`|
-|Specify a custom step pulse duration|`[ ]`|
-|GPIO pins set at micro-controller startup|`()`|
+|Menuconfig|Setting| 2nd Level Setting |
+|---|---|---|
+|Enable extra low-level configuration options|`*`||
+|Micro-controller Architecture|`STMicroelectronics STM32`||
+|Processor model|`STM32F446`||
+|Bootloader offse|`32KiB bootloader`||
+|Clock Reference|`12 MHz crystal`||
+|Communication interface|`USB (on PA11/PA12)`||
+|USB ids|`--->`||
+|| USB vendor ID | `(0x1d50)` |
+|| USB device ID | `(0x614e)` |
+|| USB serial number from CHIPID | `[*]` |
+| Optimize stepper code for 'step on both edges |`[*]`||
+| GPIO pins set at micro-controller startup |`()`||
 
 ### Verified Update Steps
 
@@ -56,14 +59,18 @@ Voron V2.4071 software configuration and hardware configuration (via this docume
 
 ## [Nitehawk USB Toolhead PCB](https://docs.ldomotors.com/voron/nitehawk-sb)
 
-|Menuconfig|Setting|
-|---|---|
-|Enable extra low-level configuration options|`*`|
-|Micro-controller Architecture|`Raspberry Pi RP2040`|
-|Bootloader offse|`16KiB bootloader`|
-|Communication interface|`USB`|
-|USB ids|`--->`|
-|GPIO pins set at micro-controller startup|`!gpio8`|
+|Menuconfig|Setting| 2nd Level Setting|
+|---|---|---|
+|Enable extra low-level configuration options|`*`||
+|Micro-controller Architecture|`Raspberry Pi RP2040`||
+|Processor model|`rp2040`||
+|Bootloader offse|`16KiB bootloader`||
+|Communication interface|`USBSERIAL`||
+|USB ids|`--->`||
+|| USB vendor ID | `(0x1d50)` |
+|| USB device ID | `(0x614e)` |
+| Optimize stepper code for 'step on both edges |`[*]`||
+|GPIO pins set at micro-controller startup|`!gpio8`||
 
 ### Verified Update Steps
 
@@ -82,9 +89,8 @@ Voron V2.4071 software configuration and hardware configuration (via this docume
 - `cd ~/klipper`
 - `sudo service klipper stop`
 - `make flash FLASH_DEVICE=/dev/serial/by-id/usb-Klipper_rp2040_3033393834049F97-if00`
-    - This will throw an error but results in the board restarting into the bootloader mode (Katapult) in the below `by-id`.
-- `make flash FLASH_DEVICE=/dev/serial/by-id/usb-katapult_rp2040_3033393834049F97-if00`
-    - This should work and result in the board restarting into Klipper mode.
+    - Upgrading Klipper 0.12 to 0.13 this worked successfully using the above without needing to manually switch to bootloader mode.
+    - This used to throw an error but make the board reboot in usb-Katapult bootloader in the below `by-id`.
 - `ls /dev/serial/by-id`
     - This should show the board back into Klipper mode.
 - `sudo service klipper start`
