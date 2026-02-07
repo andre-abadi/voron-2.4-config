@@ -114,6 +114,14 @@ Voron V2.4071 software configuration and hardware configuration (via this docume
     - Lowest of the two.
     - Safety margin, recommend rounding down to nearest `500mm/sec^2`
 
+## Raspberry Pi 4+ 4GB
+- [MainsailOS](https://docs-os.mainsail.xyz/getting-started/raspberry-pi-os-based) via [Raspberry Pi Imager](https://www.raspberrypi.com/software/)
+- [Klipperscreen](https://klipperscreen.readthedocs.io/en/latest/):
+    - [KIAUH](https://github.com/dw-0/kiauh) to install 
+    - Rotate PiTFT 4.3 by 180 degrees using [instructions](https://klipperscreen.readthedocs.io/en/latest/Troubleshooting/Rotation/)
+        - `console=tty1 root=PARTUUID=e6106aed-02 rootfstype=ext4 fsck.repair=yes rootwait cfg80211.ieee80211_regdom=EG video=[0/0]:800x480@60,rotate=180`
+    - Rotate touch interface by 180 degrees by editing `/etc/udev/rules.d/51-touchscreen.rules`
+        - `ACTION=="add", ATTRS{name}=="10-0038 generic ft5x06 (00)", ENV{LIBINPUT_CALIBRATION_MATRIX}="-1 0 1  0 -1 1  0 0 1"`
 
 # Software
 - PrusaSlicer
@@ -129,7 +137,6 @@ Voron V2.4071 software configuration and hardware configuration (via this docume
 # Mods
 
 ## Hardware
-
 - [LDO Build](https://docs.ldomotors.com/en/voron/voron2/printed_part_guide_rev_a)
     - [LDO Door Latches](https://github.com/MotorDynamicsLab/LDOVoron2/tree/main/STLs/LDO%20Door)
     - [LED Clips](https://github.com/VoronDesign/VoronUsers/blob/master/printer_mods/eddie/LED_Bar_Clip/LED_Bar_Clip_Misumi_version2.stl)
@@ -164,6 +171,10 @@ Voron V2.4071 software configuration and hardware configuration (via this docume
     - [CW2 from SB](https://github.com/VoronDesign/Voron-Stealthburner)
     - [TAP](https://github.com/VoronDesign/Voron-Tap)
 - [Nitehawk USB Toolhead PCB](https://docs.ldomotors.com/voron/nitehawk-sb)
+- [BTT SFS 2.0 Filament Motion & Runout Sensor](https://bigtree-tech.com/blogs/news/new-release-bigtreetech-sfs-v2-0)
+    - Mounted with [Voron BTT Smart Filament Sensor (SFS)2.0 Mount by Tom](https://www.printables.com/model/568619-voron-btt-smart-filament-sensor-sfs20-mount-by-tom)
+- [BTT PI TFT43](https://store.dremc.com.au/products/btt-pitft50-v2-0-with-5-inch-touch-screen-2021-version_
+    - Mounted with [Voron BigTreeTech 4.3" PI TFT Mount by MandicReally](https://thangs.com/designer/MandicReally/3d-model/Voron%20BigTreeTech%204.3%22%20PI%20TFT%20Mount%20-%20Hex%20%26%20LDO%20designs%21-851510)
 
 ## Remixed Hardware Mods
 - [LRS200 Door Cover](https://github.com/VoronDesign/VoronUsers/tree/master/printer_mods/samwiseg0/lrs_screw_terminal_cover)
@@ -184,8 +195,7 @@ Voron V2.4071 software configuration and hardware configuration (via this docume
 
 # Resonance Testing
 - [Klipper Documentation](https://www.klipper3d.org/Measuring_Resonances.html#measuring-the-resonances)
-- Built into the Nitehawk toolhead PCB
-
+- ADXL Built into the Nitehawk toolhead PCB
 
 # Unused
 Things no longer used on this printer.
@@ -200,10 +210,3 @@ Things no longer used on this printer.
 - Extra Subroutines
     - [Autocommit](https://github.com/th33xitus/kiauh/wiki/How-to-autocommit-config-changes-to-github%3F) `autocommit.cfg` + `autocommit.sh`
     - Auto Z Calibration `z_calibration.cfg` **
-
-## Plans
-- [ADXL skirt header](https://www.thingiverse.com/thing:5026196)
-- [Auto Z calibration](https://github.com/protoloft/klipper_z_calibration)
-- [Frame Expansion Sensor](https://www.klipper3d.org/Config_Reference.html#z_thermal_adjust)
-
-
