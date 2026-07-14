@@ -141,7 +141,7 @@
             "temperature_sensor raspberry_pi",
             "temperature_sensor toolhead"
           ],
-          "timestamp": "2026-07-13T07:34:02Z"
+          "timestamp": "2026-07-14T13:17:16Z"
         },
         "optional": []
       },
@@ -251,11 +251,11 @@
                   "rowspan": 1
                 },
                 {
-                  "col": -1,
+                  "col": 5,
                   "colspan": 1,
                   "enabled": false,
                   "id": "shutdown",
-                  "row": -1,
+                  "row": 3,
                   "rowspan": 1
                 },
                 {
@@ -291,11 +291,11 @@
                   "rowspan": 1
                 },
                 {
-                  "col": -1,
+                  "col": 5,
                   "colspan": 1,
                   "enabled": false,
                   "id": "tool_switcher",
-                  "row": -1,
+                  "row": 3,
                   "rowspan": 1
                 },
                 {
@@ -435,11 +435,11 @@
                   "rowspan": 1
                 },
                 {
-                  "col": -1,
+                  "col": 5,
                   "colspan": 1,
-                  "enabled": false,
+                  "enabled": true,
                   "id": "motion",
-                  "row": -1,
+                  "row": 3,
                   "rowspan": 1
                 },
                 {
@@ -501,7 +501,7 @@
                 {
                   "col": 5,
                   "colspan": 1,
-                  "enabled": true,
+                  "enabled": false,
                   "id": "notifications",
                   "row": 3,
                   "rowspan": 1
