@@ -10,13 +10,13 @@
   "display": {
     "bed_mesh_render_mode": 0,
     "dim_brightness": 30,
-    "dim_sec": 30,
+    "dim_sec": 60,
     "drm_device": "",
     "gcode_render_mode": 2,
     "gpu_3d_blocked": false,
     "rotate": 180,
     "screensaver_type": 0,
-    "sleep_sec": 300,
+    "sleep_sec": 60,
     "sleep_while_printing": false,
     "timezone": "Asia/Hong_Kong"
   },
@@ -94,13 +94,13 @@
           {
             "enabled": true,
             "klipper_name": "filament_switch_sensor switch_sensor",
-            "role": "none",
+            "role": "runout",
             "type": "switch"
           },
           {
-            "enabled": true,
+            "enabled": false,
             "klipper_name": "filament_motion_sensor encoder_sensor",
-            "role": "runout",
+            "role": "none",
             "type": "motion"
           }
         ]
@@ -141,12 +141,13 @@
             "temperature_sensor raspberry_pi",
             "temperature_sensor toolhead"
           ],
-          "timestamp": "2026-07-14T13:17:16Z"
+          "timestamp": "2026-07-19T10:51:41Z"
         },
         "optional": []
       },
       "heaters": {
         "bed": "heater_bed",
+        "chamber": "none",
         "hotend": "extruder"
       },
       "leds": {
@@ -259,11 +260,11 @@
                   "rowspan": 1
                 },
                 {
-                  "col": -1,
+                  "col": 5,
                   "colspan": 1,
                   "enabled": false,
                   "id": "lock",
-                  "row": -1,
+                  "row": 3,
                   "rowspan": 1
                 },
                 {
@@ -437,7 +438,7 @@
                 {
                   "col": 5,
                   "colspan": 1,
-                  "enabled": true,
+                  "enabled": false,
                   "id": "motion",
                   "row": 3,
                   "rowspan": 1
@@ -631,6 +632,20 @@
                   "id": "fan:5",
                   "row": 1,
                   "rowspan": 1
+                },
+                {
+                  "col": 5,
+                  "colspan": 1,
+                  "config": {
+                    "color": 16733986,
+                    "icon": "thermometer",
+                    "macro": "HEATSOAK",
+                    "skip_param_prompt": true
+                  },
+                  "enabled": true,
+                  "id": "favorite_macro:4",
+                  "row": 3,
+                  "rowspan": 1
                 }
               ]
             }
@@ -643,6 +658,7 @@
       },
       "temp_sensors": {
         "bed": "heater_bed",
+        "chamber": "temperature_fan chamber",
         "hotend": "extruder"
       },
       "type": "Voron 2.4",
@@ -656,6 +672,10 @@
     "cancel_escalation_timeout_seconds": 120,
     "macro_require_confirmation": true
   },
+  "security": {
+    "auto_lock": false,
+    "pin_hash": "5db1fee4b5703808c48078a76768b155b421b210c0761cd6a5d223f4d99f1eaa"
+  },
   "sound": {
     "output_device": "default"
   },
@@ -668,7 +688,7 @@
     "heat_soak": "HEATSOAK",
     "load_filament": "",
     "pause": "",
-    "purge": "",
+    "purge": "BLOBIFIER",
     "quick_button_1": "clean_nozzle",
     "quick_button_2": "",
     "quick_button_3": "heat_soak",
