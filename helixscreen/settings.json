@@ -1,11 +1,8 @@
 {
   "active_printer_id": "default",
-  "appearance": {
-    "toolhead_style": 5
-  },
   "brightness": 100,
   "completion_alert": 2,
-  "config_version": 19,
+  "config_version": 23,
   "dark_mode": true,
   "display": {
     "bed_mesh_render_mode": 0,
@@ -14,6 +11,7 @@
     "drm_device": "",
     "gcode_render_mode": 2,
     "gpu_3d_blocked": false,
+    "gpu_blur_blocked": false,
     "rotate": 180,
     "screensaver_type": 0,
     "sleep_sec": 60,
@@ -41,12 +39,6 @@
     "touch_device": ""
   },
   "language": "en",
-  "led": {
-    "auto_state": {
-      "enabled": null
-    },
-    "selected_strips": null
-  },
   "log_level": "warn",
   "log_path": "/tmp/helixscreen.log",
   "material_overrides": {
@@ -55,10 +47,13 @@
     }
   },
   "motion": {
-    "jog_mode": 1
+    "jog_mode": 2
   },
   "printers": {
     "default": {
+      "appearance": {
+        "toolhead_style": 5
+      },
       "default_macros": {
         "cooldown": "SET_HEATER_TEMPERATURE HEATER=extruder TARGET=0\nSET_HEATER_TEMPERATURE HEATER=heater_bed TARGET=0",
         "load_filament": {
@@ -124,8 +119,7 @@
             "controller_fan controller_fan"
           ],
           "filament_sensors": [
-            "filament_switch_sensor switch_sensor",
-            "filament_motion_sensor encoder_sensor"
+            "filament_switch_sensor switch_sensor"
           ],
           "heaters": [
             "heater_bed",
@@ -141,7 +135,7 @@
             "temperature_sensor raspberry_pi",
             "temperature_sensor toolhead"
           ],
-          "timestamp": "2026-07-19T10:51:41Z"
+          "timestamp": "2026-09-04T01:34:01Z"
         },
         "optional": []
       },
@@ -151,6 +145,10 @@
         "hotend": "extruder"
       },
       "leds": {
+        "auto_paired_bases": [
+          "FRAME_LEDS",
+          "SET_NOZZLE_LEDS"
+        ],
         "auto_state": {
           "enabled": false,
           "mappings": {
@@ -200,7 +198,24 @@
         "last_color": "#FFFFFF",
         "last_white": 0.0,
         "led_on_at_start": false,
-        "macro_devices": [],
+        "macro_devices": [
+          {
+            "name": "Set Nozzle Leds",
+            "off_macro": "SET_NOZZLE_LEDS_OFF",
+            "on_macro": "SET_NOZZLE_LEDS_ON",
+            "presets": [],
+            "toggle_macro": "",
+            "type": "on_off"
+          },
+          {
+            "name": "Frame Leds",
+            "off_macro": "FRAME_LEDS_OFF",
+            "on_macro": "FRAME_LEDS_ON",
+            "presets": [],
+            "toggle_macro": "",
+            "type": "on_off"
+          }
+        ],
         "selected": [],
         "selected_strips": [
           "output_pin caselight"
@@ -302,7 +317,7 @@
                 {
                   "col": 4,
                   "colspan": 1,
-                  "enabled": true,
+                  "enabled": false,
                   "id": "led",
                   "row": 3,
                   "rowspan": 1
@@ -428,11 +443,11 @@
                   "rowspan": 1
                 },
                 {
-                  "col": 0,
+                  "col": 4,
                   "colspan": 1,
                   "enabled": false,
                   "id": "macros",
-                  "row": 1,
+                  "row": 3,
                   "rowspan": 1
                 },
                 {
@@ -527,14 +542,14 @@
                   "rowspan": 1
                 },
                 {
-                  "col": 5,
+                  "col": 4,
                   "colspan": 1,
                   "config": {
                     "fan": "fan"
                   },
                   "enabled": true,
                   "id": "fan:2",
-                  "row": 0,
+                  "row": 1,
                   "rowspan": 1
                 },
                 {
@@ -554,7 +569,8 @@
                   "config": {
                     "color": 15022389,
                     "icon": "power",
-                    "macro": "POWER_DOWN_STANDBY"
+                    "macro": "POWER_DOWN_STANDBY",
+                    "require_confirmation": false
                   },
                   "enabled": true,
                   "id": "favorite_macro:2",
@@ -567,7 +583,8 @@
                   "config": {
                     "color": 9159498,
                     "icon": "power",
-                    "macro": "STARTUP_SELF_TEST"
+                    "macro": "STARTUP_SELF_TEST",
+                    "require_confirmation": false
                   },
                   "enabled": true,
                   "id": "favorite_macro:3",
@@ -623,27 +640,41 @@
                   "rowspan": 2
                 },
                 {
-                  "col": 4,
-                  "colspan": 1,
-                  "config": {
-                    "fan": "heater_fan hotend_fan"
-                  },
-                  "enabled": true,
-                  "id": "fan:5",
-                  "row": 1,
-                  "rowspan": 1
-                },
-                {
                   "col": 5,
                   "colspan": 1,
                   "config": {
                     "color": 16733986,
                     "icon": "thermometer",
                     "macro": "HEATSOAK",
-                    "skip_param_prompt": true
+                    "require_confirmation": false
                   },
                   "enabled": true,
                   "id": "favorite_macro:4",
+                  "row": 3,
+                  "rowspan": 1
+                },
+                {
+                  "col": 5,
+                  "colspan": 1,
+                  "config": {
+                    "fan": "heater_fan hotend_fan"
+                  },
+                  "enabled": true,
+                  "id": "fan:5",
+                  "row": 0,
+                  "rowspan": 1
+                },
+                {
+                  "col": 4,
+                  "colspan": 1,
+                  "config": {
+                    "color": 16761095,
+                    "icon": "printer_3d",
+                    "macro": "FRONT_AND_CENTRE",
+                    "require_confirmation": false
+                  },
+                  "enabled": true,
+                  "id": "favorite_macro:5",
                   "row": 3,
                   "rowspan": 1
                 }
@@ -653,9 +684,7 @@
         }
       },
       "printer_name": "V2.4071",
-      "probe_sensors": {
-        "sensors": null
-      },
+      "probe_sensors": {},
       "temp_sensors": {
         "bed": "heater_bed",
         "chamber": "temperature_fan chamber",
@@ -681,7 +710,7 @@
   },
   "sounds_enabled": false,
   "standard_macros": {
-    "bed_level": "",
+    "bed_level": "CQGL",
     "bed_mesh": "",
     "cancel": "",
     "clean_nozzle": "",
