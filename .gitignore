@@ -2,3 +2,5 @@ printer-*.cfg
 !printer-macros.cfg
 input_shaper/**
 helixscreen/**
+!helixscreen/settings.json
+.moonraker.conf.bkp
